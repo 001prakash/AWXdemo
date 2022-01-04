@@ -3,7 +3,7 @@
 - name: Webserver Sample
   hosts: all
   user: root
-   tasks:
+  tasks:
     - name: Add epel-repo
       yum:
        name: epel-release
