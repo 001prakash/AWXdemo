@@ -8,8 +8,8 @@
       yum:
        name: epel-release
        state: present
-       register: command_result
-       failed_when: "'FAILED' in command_result.stderr"
+      register: command_result
+      failed_when: "'FAILED' in command_result.stderr"
 
     - name: Install Nginx
       yum:
