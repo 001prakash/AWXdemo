@@ -2,7 +2,7 @@
 # - hosts: 192.168.56.3
 - name: Webserver Sample
   hosts: all
-   user: root
+  user: root
    tasks:
     - name: Add epel-repo
       yum:
