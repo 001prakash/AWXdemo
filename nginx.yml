@@ -10,7 +10,7 @@
        state: present
       ignore_errors: yes
 
-    - name: Install Nginx
+    - name: Install Httpd
       yum:
        name: httpd
        state: present
@@ -18,8 +18,9 @@
 
     - name: add index.html file
       template:
-       src: ./index.html
+       src: index.html
        dest: /var/www/html
+      become: true 
 
     - name: allow all access to tcp port 80
       firewalld:
