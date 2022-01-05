@@ -1,6 +1,7 @@
 - name: Loops, conditions and Register
   hosts: all
   user: opc
+  become: yes
   tasks:
     - name: Add several users
       yum:
