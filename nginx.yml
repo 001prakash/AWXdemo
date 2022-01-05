@@ -12,7 +12,7 @@
 
     - name: Install Nginx
       yum:
-       name: nginx
+       name: httpd
        state: present
 
     - name: add index.html file
