@@ -1,0 +1,19 @@
+- name: Webserver Sample
+  hosts: all
+  user: opc
+  become: true
+  tasks:
+    - name: Install package
+      yum:
+       name: {{pkg}}
+       state: present
+      
+    - name: add index.html file
+      template:
+       src: {{pkg2}}
+       dest: /temp       
+
+    - name: Start Httpd
+      service:
+       name: {{pkg}}
+       state: started
