@@ -5,15 +5,15 @@
   tasks:
     - name: Install package
       yum:
-       name: {{pkg}}
+       name: '{{pkg}}'
        state: present
       
     - name: add index.html file
       template:
-       src: {{pkg2}}
+       src: '{{pkg2}}'
        dest: /temp       
 
     - name: Start Httpd
       service:
-       name: {{pkg}}
+       name: '{{pkg}}'
        state: started
