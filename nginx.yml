@@ -19,7 +19,7 @@
     - name: add index.html file
       template:
        src: ./index.html
-       dest: /usr/share/nginx/html/index.html
+       dest: /var/www/html
 
     - name: allow all access to tcp port 80
       firewalld:
