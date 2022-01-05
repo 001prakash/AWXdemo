@@ -1,0 +1,11 @@
+- name: Loops, conditions and Register
+  hosts: all
+  user: opc
+  tasks:
+    - name: Add several users
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+       - telent
+       - httpd
