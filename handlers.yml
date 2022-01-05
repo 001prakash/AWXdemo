@@ -2,6 +2,7 @@
   hosts: all
   user: opc
   become: yes
+  gather_facts: yes
   vars:
     http_port: 80
     max_clients: 200
