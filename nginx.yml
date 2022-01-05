@@ -3,6 +3,7 @@
 - name: Webserver Sample
   hosts: all
   user: opc
+  become: true
   tasks:
     - name: Add epel-repo
       yum:
@@ -14,21 +15,20 @@
       yum:
        name: httpd
        state: present
-      become: true 
-
+      
     - name: add index.html file
       template:
        src: index.html
        dest: /var/www/html
-      become: true 
-
+      
     - name: allow all access to tcp port 80
       firewalld:
        port: 80/tcp
        zone: public
        state: enabled
+       
 
-    - name: Start Nginx
+    - name: Start Httpd
       service:
-       name: nginx
+       name: httpd
        state: started
