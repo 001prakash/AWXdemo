@@ -3,6 +3,14 @@
   user: opc
   become: yes
   tasks:
+    - name: Register a variable
+      ansible.builtin.shell: cat /etc/motd
+      register: motd_contents
+
+    - name: Use the variable in conditional statement
+      ansible.builtin.shell: echo "motd contains the word hi"
+      when: motd_contents.stdout.find('hi') != -1
+        
     - name: find out os family
       debug:
         msg: "System {{ ansible_os_family }}"
