@@ -15,5 +15,5 @@
       loop:
        - telnet
        - httpd
-      when: result == "RedHat"
+      when: result.System == "RedHat"
     
