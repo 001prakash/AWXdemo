@@ -23,6 +23,5 @@
       loop:
        - telnet
        - httpd
-       #when: result.stdout == "RedHat"
-      when: result.stdout.find('RedHat') != 1
+       
     
