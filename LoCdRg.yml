@@ -10,6 +10,6 @@
       loop:
        - telnet
        - httpd
-     - name: find out os family
-       debug:
-         msg: "System {{ ansible_os_family }}"
+    - name: find out os family
+      debug:
+        msg: "System {{ ansible_os_family }}"
