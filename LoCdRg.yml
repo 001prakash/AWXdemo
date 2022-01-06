@@ -10,4 +10,4 @@
       loop:
        - telnet
        - httpd
-      when: ansible_os_family == "Linux"
+      when: ansible_os_family == "Redhat"
