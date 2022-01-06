@@ -10,3 +10,4 @@
       loop:
        - telnet
        - httpd
+      when: ansible_os_family == "CentOS"
