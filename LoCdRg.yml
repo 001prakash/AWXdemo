@@ -10,6 +10,7 @@
       loop:
        - telnet
        - httpd
+      when: ansible_facts['os_family'] == "RedHat"
     - name: find out os family
       debug:
         msg: "System {{ ansible_os_family }}"
