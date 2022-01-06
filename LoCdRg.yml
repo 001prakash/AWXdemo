@@ -15,5 +15,5 @@
       loop:
        - telnet
        - httpd
-      when: result == "Redhat"
+      when: result == "RedHat"
     
