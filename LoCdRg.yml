@@ -3,11 +3,11 @@
   user: opc
   become: yes
   tasks:
-    - name: Add several users
+    - name: Adding packages
       yum:
         name: "{{ item }}"
         state: present
       loop:
        - telnet
        - httpd
-      when: ansible_os_family == "CentOS"
+      when: ansible_os_family == "Fedora"
