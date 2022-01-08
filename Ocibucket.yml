@@ -7,12 +7,12 @@
       dnf:
         name: httpd
         state: present
-        
+ 
     - name: Get/download an object to dest
       oci_object_storage_object_facts:
-        namespace: axwm1yvro9yu
-        bucket: jdk_storage
-        object: newone.html
+        namespace_name: axwm1yvro9yu
+        bucket_name: jdk_storage
+        object_name: newone.html
         dest: /var/www/html
         
     - name: Check httpd service
