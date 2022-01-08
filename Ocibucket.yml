@@ -9,7 +9,7 @@
         state: present
         
     - name: Get/download an object to dest
-      oci_object:
+      oci_object_storage_object_facts:
         namespace: axwm1yvro9yu
         bucket: jdk_storage
         object: newone.html
