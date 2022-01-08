@@ -1,0 +1,23 @@
+- name: Using bucket for latest html storage
+  hosts: all
+  user: opc
+  become: yes
+  tasks:
+    - name: Install httpd
+      dfn:
+        name: httpd
+        state: present
+        
+    - name: Get/download an object to dest
+      oci_object:
+        namespace: axwm1yvro9yu
+        bucket: jdk_storage
+        object: newone.html
+        dest: /var/www/html
+        
+    - name: Check httpd service
+      service:
+        name: httpd
+        state: restarted
+    
+        
