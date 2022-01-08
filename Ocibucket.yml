@@ -7,6 +7,10 @@
       dnf:
         name: httpd
         state: present
+    - name: Create a new customer secret key
+      oci_customer_secret_key:
+        user_id: "{{ oci_id }}"
+        name: "my first customer secret key"
  
     - name: Get/download an object to dest
       oci_object_storage_object_facts:
